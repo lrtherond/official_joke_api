@@ -85,5 +85,7 @@ app.use((err, req, res, next) => {
 });
 
 const PORT = process.env.PORT || 3005;
-app.listen(PORT, () => console.log(`listening on ${PORT}`));
-
+app.listen(PORT, (error) => {
+  if (error) throw error;
+  console.log(`listening on ${PORT}`);
+});
